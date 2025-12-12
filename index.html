@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spa de Mascotas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+      <div>
+        <h1>🐾 Spa de Mascotas</h1>
+        <p>Registro, agenda y carrito en un solo sistema</p>
+      </div>
+      <nav class="nav-buttons">
+        <button data-modulo="mod-registro" class="nav-btn active">Registro</button>
+        <button data-modulo="mod-agenda" class="nav-btn">Agenda</button>
+        <button data-modulo="mod-carrito" class="nav-btn">Carrito</button>
+      </nav>
+    </header>
+
+    <main id="modulos">
+      <!-- REGISTRO DUEÑOS Y MASCOTAS -->
+      <section id="mod-registro" class="mod visible">
+        <h2>📝 Registro de dueños y mascotas</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>👤 Datos del dueño</h3>
+            <input id="dueño-nombre" placeholder="Nombre completo">
+            <input id="dueño-tel" placeholder="Teléfono">
+            <input id="dueño-email" placeholder="Correo electrónico">
+          </div>
+          <div class="card">
+            <h3>🐕 Datos de la mascota</h3>
+            <input id="mascota-nombre" placeholder="Nombre de la mascota">
+            <input id="mascota-especie" placeholder="Especie (Perro, Gato, etc.)">
+            <input id="mascota-raza" placeholder="Raza">
+          </div>
+        </div>
+        <button id="btn-guardar-registro">Guardar registro</button>
+        <div class="card lista">
+          <h3>📋 Registros guardados</h3>
+          <div id="lista-registros"></div>
+        </div>
+      </section>
+
+      <!-- AGENDA DE SERVICIOS -->
+      <section id="mod-agenda" class="mod">
+        <h2>📅 Agenda de servicios</h2>
+        <div class="grid-4">
+          <input type="date" id="fecha">
+          <input type="time" id="hora">
+          <select id="servicio">
+            <option value="">Seleccione servicio</option>
+            <option>Baño</option>
+            <option>Corte</option>
+            <option>Baño + Corte</option>
+            <option>Estética completa</option>
+          </select>
+          <input id="agenda-mascota" placeholder="Nombre de la mascota">
+        </div>
+        <button id="btn-agendar">Agendar cita</button>
+        <div class="card lista">
+          <h3>🗓️ Citas agendadas</h3>
+          <div id="lista-agenda"></div>
+        </div>
+      </section>
+
+      <!-- CARRITO DE COMPRAS -->
+      <section id="mod-carrito" class="mod">
+        <h2>🛒 Catálogo y carrito de compras</h2>
+        <div class="catalogo">
+          <div class="prod" data-nombre="Baño completo" data-precio="50">
+            <span class="icon">🛁</span>
+            <h4>Baño completo</h4>
+            <p>Bs. 50</p>
+          </div>
+          <div class="prod" data-nombre="Corte de pelo" data-precio="40">
+            <span class="icon">✂️</span>
+            <h4>Corte de pelo</h4>
+            <p>Bs. 40</p>
+          </div>
+          <div class="prod" data-nombre="Comida Premium 2kg" data-precio="70">
+            <span class="icon">🥩</span>
+            <h4>Comida Premium 2kg</h4>
+            <p>Bs. 70</p>
+          </div>
+          <div class="prod" data-nombre="Juguete interactivo" data-precio="30">
+            <span class="icon">🎾</span>
+            <h4>Juguete interactivo</h4>
+            <p>Bs. 30</p>
+          </div>
+        </div>
+
+        <div class="card lista">
+          <h3>🧾 Detalle del carrito</h3>
+          <div id="lista-carrito"></div>
+          <div class="total-row">
+            <span>Subtotal:</span>
+            <span id="subtotal">Bs. 0</span>
+          </div>
+          <div class="total-row total-final">
+            <span>Total (IVA incluido):</span>
+            <span id="total">Bs. 0</span>
+          </div>
+          <button id="btn-whatsapp" class="btn-wa">Finalizar compra por WhatsApp</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

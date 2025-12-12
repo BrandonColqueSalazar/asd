@@ -1,0 +1,148 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial,sans-serif;
+  background:#f2f4f8;
+  min-height:100vh;
+  padding:1rem;
+}
+.container{
+  max-width:1000px;
+  margin:0 auto;
+}
+.header{
+  background:#fff;
+  padding:1.5rem;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.07);
+  margin-bottom:1rem;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+.header h1{font-size:1.8rem}
+.header p{color:#555;font-size:.95rem}
+.nav-buttons{
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+}
+.nav-btn{
+  flex:1;
+  min-width:120px;
+  border:none;
+  padding:.8rem;
+  border-radius:10px;
+  background:#e5e9f0;
+  cursor:pointer;
+  font-weight:bold;
+}
+.nav-btn.active{
+  background:#4ecdc4;
+  color:#fff;
+}
+
+main{
+  background:#fff;
+  padding:1.5rem;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.07);
+}
+.mod{display:none}
+.mod.visible{display:block}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  margin-bottom:1rem;
+}
+.grid-4{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:.5rem;
+  margin-bottom:1rem;
+}
+
+.card{
+  background:#f7f8fa;
+  padding:1rem;
+  border-radius:14px;
+}
+input,select{
+  width:100%;
+  padding:.7rem;
+  margin-bottom:.5rem;
+  border-radius:8px;
+  border:1px solid #ccd1d9;
+  font-size:.95rem;
+}
+button{
+  border:none;
+  padding:.9rem 1rem;
+  border-radius:10px;
+  background:#4ecdc4;
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:.5rem;
+}
+button:hover{
+  background:#3ab3ab;
+}
+
+.lista{
+  margin-top:1rem;
+}
+.lista div{
+  padding:.4rem 0;
+  border-bottom:1px solid #dde1e7;
+  font-size:.9rem;
+}
+
+.catalogo{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:.8rem;
+  margin-bottom:1rem;
+}
+.prod{
+  background:#fff;
+  padding:1rem;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 6px 15px rgba(0,0,0,.06);
+  cursor:pointer;
+  transition:.2s;
+}
+.prod:hover{
+  transform:translateY(-3px);
+  background:#eafaf8;
+}
+.prod .icon{
+  font-size:2rem;
+  display:block;
+  margin-bottom:.5rem;
+}
+.prod h4{margin-bottom:.2rem}
+
+.total-row{
+  display:flex;
+  justify-content:space-between;
+  margin-top:.3rem;
+  font-size:.95rem;
+}
+.total-final{
+  font-weight:bold;
+  border-top:1px solid #ccd1d9;
+  padding-top:.3rem;
+}
+.btn-wa{
+  background:#25D366;
+  width:100%;
+  margin-top:.8rem;
+}
+
+@media(max-width:768px){
+  .grid-2{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:1fr 1fr}
+}
